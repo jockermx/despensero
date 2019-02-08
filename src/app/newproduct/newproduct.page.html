@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <!--ion-back-button defaultHref=""></ion-back-button-->
+    <ion-title>newproduct</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="product.name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-input [(ngModel)]="product.description"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button color="primary full" (click)="saveProduct()">Save</ion-button>
+</ion-content>

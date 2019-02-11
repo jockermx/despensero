@@ -6,4 +6,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <!-- Searchbar with a placeholder -->
+  <ion-toolbar>
+  <ion-searchbar animated placeholder="Filter Schedules" (ionInput)="getItems($event)"></ion-searchbar>
+</ion-toolbar>
+  <ion-list>
+    <ion-item *ngFor="let product of productsList">
+      <h2> {{ product.name }} </h2>
+      <h3> Descripción: <strong>{{ product.descriotion }}</strong> </h3>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

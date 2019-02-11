@@ -1,5 +1,7 @@
 {
   "name": "despensero",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>qrscanner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Click Button To Scan</h1>
+ 
+ 
+  <button ion-button round (click)="scanCode()">Scan Code</button>
+  
+  <div *ngIf="scannedData">
+    <p>Scanned Code Text : <b>{{scannedData['text']}}</b></p>
+    <p>Scanned Code Format : <b>{{scannedData['format']}}</b></p>
+  </div>
+</ion-content>

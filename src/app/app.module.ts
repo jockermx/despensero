@@ -8,11 +8,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { QrscannerPage } from './qrscanner/qrscanner.page';
+import { QrscannerPageModule } from './qrscanner/qrscanner.module';
 
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule} from 'angularfire2';
 import { ProductService } from './services/product.service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyB0TZLmPVpr8e6HC-hMY1cEf-VLWmygJlM",
@@ -30,16 +33,18 @@ export const firebaseConfig = {
   entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    QrscannerPageModule,
+    IonicModule.forRoot()
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    BarcodeScanner,
     ProductService
   ],
   bootstrap: [AppComponent]

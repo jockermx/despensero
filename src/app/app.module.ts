@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule/*, CUSTOM_ELEMENTS_SCHEMA*/  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -8,8 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QrscannerPage } from './qrscanner/qrscanner.page';
-import { QrscannerPageModule } from './qrscanner/qrscanner.module';
 
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -37,9 +35,11 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    QrscannerPageModule,
     IonicModule.forRoot()
   ],
+  /*schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],*/
   providers: [
     StatusBar,
     SplashScreen,

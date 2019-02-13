@@ -22,8 +22,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [QrscannerPage],
-  exports: [
-    QrscannerPage
-  ]
+  exports: [QrscannerPage]
 })
 export class QrscannerPageModule {}
